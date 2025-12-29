@@ -1,0 +1,109 @@
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2b2b40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.container {
+  width: 320px;
+  padding: 20px;
+  background: #1c1c1c;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  display: none; /* calculators don’t need titles */
+}
+
+.calculator-screen {
+  width: 300px;
+  height: 70px;
+  margin-bottom: 25px;
+  padding: 10px;
+  font-size: 32px;
+  text-align: right;
+  border: none;
+  border-radius: 10px;
+  background: #111;
+  color: #0fdf8c;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  height: 55px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #2d2d2d;
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+  transition: all 0.15s ease;
+}
+
+button:hover {
+  background: #3a3a3a;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Operators */
+button[id^="b+"],
+button[id^="b-"],
+button[id^="b*"],
+button[id^="b/"] {
+  background: #ff9500;
+  color: #fff;
+}
+
+button[id^="b+"]:hover,
+button[id^="b-"]:hover,
+button[id^="b*"]:hover,
+button[id^="b/"]:hover {
+  background: #ffa733;
+}
+
+/* Equals */
+#b\= {
+  background: #0fdf8c;
+  color: #000;
+  grid-column: span 2;
+}
+
+#b\=:hover {
+  background: #25f0a3;
+}
+
+/* Clear */
+#bC {
+  background: #ff3b3b;
+  grid-area: 5 / 1 / 5 / 2;
+}
+
+#bC:hover {
+  background: #ff5c5c;
+}
+/* Delete */
+#bD {
+  background: #0a0909;
+  grid-area: 5 / 4 / 5 / 4;
+}
+#bD:hover {
+  background: #1a1a1a;
+}
+
