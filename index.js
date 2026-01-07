@@ -101,7 +101,7 @@ for (let i = 0; i < buttons.length; i++) {
         expression += value;
       }
       //   expression += value;
-      console.log(expression);  
+      console.log(expression);
     }
   });
 }
@@ -111,45 +111,32 @@ document.addEventListener("keydown", function (event) {
   console.log("Key pressed: " + key);
 
   // let buttons = document.querySelectorAll(".btn");
-  if ((key >= "0" && key <= "9") || key === "+" || key === "-" || key === "*" || key === "/" || key === "Enter" || key === "=" || key === "Backspace") {
+  if (
+    (key >= "0" && key <= "9") ||
+    key === "+" ||
+    key === "-" ||
+    key === "*" ||
+    key === "/" ||
+    key === "Enter" ||
+    key === "=" ||
+    key === "Backspace"
+  ) {
     for (let i = 0; i < buttons.length; i++) {
-      if (buttons[i].textContent === key || (key === "Enter" && buttons[i].textContent === "=") || (key === "Backspace" && buttons[i].textContent === "Del")) {
+      if (
+        buttons[i].textContent === key ||
+        (key === "Enter" && buttons[i].textContent === "=") ||
+        (key === "Backspace" && buttons[i].textContent === "Del")
+      ) {
         buttons[i].click();
         break;
       }
     }
   }
- 
-
-  // let button = Array.from(buttons).find((btn) => btn.textContent === key);
-  // if (button) {
-  //   button.click();
-  
-  // }
-
 
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// FUNCTTIONS 
-
+// FUNCTTIONS
 
 // function evaluateExpression(expr) {
 //   try {
@@ -188,7 +175,7 @@ function myEvaluateExpression(expr) {
       array.push(numberBuilder);
     }
   }
-  console.log(array);
+  // console.log(array);
 
   // TRYING TO CATCH ERRORS LIKE ++, --, */, etc.
 
@@ -251,7 +238,7 @@ function myEvaluateExpression(expr) {
       }
       array.splice(i - 1, 3, result.toString());
       i = i - 1;
-      console.log(array);
+      // console.log(array);
     }
   }
   for (let i = 0; i < array.length; i++) {
